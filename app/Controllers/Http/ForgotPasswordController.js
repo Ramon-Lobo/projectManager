@@ -43,7 +43,7 @@ class ForgotPasswordController {
         .subtract('2', 'days')
         .isAfter(user.token_created_at)
 
-      if(tokenExpired) {
+      if (tokenExpired) {
         return response
           .status(401)
           .send({ error: { message: 'O token de recuperação de senha está expirado' } })
